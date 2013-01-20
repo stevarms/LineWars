@@ -32,7 +32,7 @@ public class DrawingPanel {
 		 * Also not needing to worry about lines being generated right next to each other
 		 */
 		for (int i=0;i<HL;i++) { // draw horizontal lines
-			y = (int) Math.floor((double)(rd.nextInt(max_y-min_y)+min_y)/2)*2; // pick a point on the y-axis to draw the horizontal line
+			y = (int) Math.floor((double)(rd.nextInt(max_y-min_y)+min_y)/3)*3; // pick a point on the y-axis to draw the horizontal line
 			if (line_list.contains(y) || y < min_y+2 || y > max_y-2) // check to see if the y-axis generated is already in the list
 				i--;
 			else {
@@ -44,7 +44,7 @@ public class DrawingPanel {
 				
 		
 		for (int j=0; j<VL;j++) { // draw vertical lines
-			x = (int) Math.floor((double)(rd.nextInt(max_x-min_x)+min_x)/2)*2; // pick a point on the x-axis to draw the vertical line
+			x = (int) Math.floor((double)(rd.nextInt(max_x-min_x)+min_x)/3)*3; // pick a point on the x-axis to draw the vertical line
 			if (line_list.contains(x) || x < min_x+2 || x > max_x-2)
 				j--;
 			else {
