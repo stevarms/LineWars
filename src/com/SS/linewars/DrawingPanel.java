@@ -7,16 +7,6 @@ public class DrawingPanel {
 
 	private ArrayList line_list = new ArrayList();
 	
-	private class line_object {
-		public int x,y,x2,y2;
-		line_object(int x, int y, int x2, int y2) {
-			this.x = x;
-			this.y = y;
-			this.x2 = x2;
-			this.y2 = y2;
-		}
-	}
-	
 	/**
 	 * This function randomly picks a point along the x-axis and y-axis then draws a line across it
 	 * @param BL bottom-left
@@ -46,7 +36,7 @@ public class DrawingPanel {
 			if (line_list.contains(y) || y < min_y+2 || y > max_y-2) // check to see if the y-axis generated is already in the list
 				i--;
 			else {
-				line_object LO = new line_object(BL.x,y,TR.x,y);
+				LineObject LO = new LineObject(BL.x,y,TR.x,y);
 				line_list.add(LO); // put into array to check for errors
 				// drawLine(BL.x,y,TR.x,y);
 			}
@@ -58,7 +48,7 @@ public class DrawingPanel {
 			if (line_list.contains(x) || x < min_x+2 || x > max_x-2)
 				j--;
 			else {
-				line_object LO = new line_object(x,BL.y,x,TR.y);
+				LineObject LO = new LineObject(x,BL.y,x,TR.y);
 				line_list.add(LO);
 				// drawLine(x,BL.y,x,TR.y);
 			}
