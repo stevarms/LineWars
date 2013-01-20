@@ -1,11 +1,14 @@
 package com.SS.linewars;
 
+import java.util.ArrayList;
 import java.util.Random;
+
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.Paint.Style;
 import android.graphics.drawable.Drawable;
@@ -127,6 +130,15 @@ public class gameView extends View {
         int s3  = sxy * 3;
         int x7 = mOffetX;
         int y7 = mOffetY;
+
+        DrawingPanel panel = new DrawingPanel();
+        ArrayList list = new ArrayList();
+        Point BL = new Point(0,0);
+        Point TR = new Point(750,750);
+        list = panel.Create_Level(BL,TR,10);
+        for (int i = 1;i<list.size();i++){
+            canvas.drawLine(((LineObject) list.get(i)).getX(),((LineObject) list.get(i)).getY(),((LineObject) list.get(i)).getX2(),((LineObject) list.get(i)).getY2(),mLinePaint);
+        }
 
         
     }

@@ -63,7 +63,7 @@ public class DrawingPanel {
 	 * @param TR top-right
 	 * @param level current level
 	 */
-	public void Create_Level(Point BL, Point TR, int level) {
+	public ArrayList Create_Level(Point BL, Point TR, int level) {
 		
 		int number_of_lines = level+2; // # of lines to be drawn for the level
 		Random rd = new Random();
@@ -74,7 +74,7 @@ public class DrawingPanel {
 		int number_of_intersections = HL * VL; // # of intersections (answer)
 		line_list.add(number_of_intersections); // first element in the list is the answer
 		
-		Draw_Random_Lines(BL,TR,HL,VL);
+		return Draw_Random_Lines(BL,TR,HL,VL);
 	}
 	/*
 	public static void main (String args[]) {

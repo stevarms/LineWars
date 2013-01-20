@@ -187,6 +187,10 @@ public class answerView extends View {
     //-----------------------------------------
 
 
+    /**
+     *  draws the grid and numbers in the grid for answers
+     */
+    
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
