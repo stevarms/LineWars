@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class DrawingPanel {
 
+	private ArrayList HL_list = new ArrayList();
+	private ArrayList VL_list = new ArrayList();
 	private ArrayList line_list = new ArrayList();
 	
 	/**
@@ -33,9 +35,10 @@ public class DrawingPanel {
 		 */
 		for (int i=0;i<HL;i++) { // draw horizontal lines
 			y = (int) Math.floor((double)(rd.nextInt(max_y-min_y)+min_y)/3)*3; // pick a point on the y-axis to draw the horizontal line
-			if (line_list.contains(y) || y < min_y+2 || y > max_y-2) // check to see if the y-axis generated is already in the list
+			if (HL_list.contains(y) || y < min_y+2 || y > max_y-2) // check to see if the y-axis generated is already in the list
 				i--;
 			else {
+				HL_list.add(y);
 				LineObject LO = new LineObject(BL.x,y,TR.x,y);
 				line_list.add(LO); // put into array to check for errors
 				// drawLine(BL.x,y,TR.x,y);
@@ -45,9 +48,10 @@ public class DrawingPanel {
 		
 		for (int j=0; j<VL;j++) { // draw vertical lines
 			x = (int) Math.floor((double)(rd.nextInt(max_x-min_x)+min_x)/3)*3; // pick a point on the x-axis to draw the vertical line
-			if (line_list.contains(x) || x < min_x+2 || x > max_x-2)
+			if (VL_list.contains(x) || x < min_x+2 || x > max_x-2)
 				j--;
 			else {
+				VL_list.add(x);
 				LineObject LO = new LineObject(x,BL.y,x,TR.y);
 				line_list.add(LO);
 				// drawLine(x,BL.y,x,TR.y);

@@ -135,7 +135,7 @@ public class gameView extends View {
         ArrayList list = new ArrayList();
         Point BL = new Point(0,0);
         Point TR = new Point(750,750);
-        list = panel.Create_Level(BL,TR,10);
+        list = panel.Create_Level(BL,TR,50);
         for (int i = 1;i<list.size();i++){
             canvas.drawLine(((LineObject) list.get(i)).getX(),((LineObject) list.get(i)).getY(),((LineObject) list.get(i)).getX2(),((LineObject) list.get(i)).getY2(),mLinePaint);
         }
